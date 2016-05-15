@@ -8,9 +8,9 @@
 
 import UIKit
 
-class StepByStep: UIView {
+public class StepByStep: UIView {
 
-    var currentStepIndex: UInt {
+    public var currentStepIndex: UInt {
         didSet {
             if self.currentStepIndex > self.numberOfSteps {
                 self.currentStepIndex = numberOfSteps
@@ -19,15 +19,15 @@ class StepByStep: UIView {
             updateCurrentStep()
         }
     }
-    var numberOfSteps: UInt {
+    public var numberOfSteps: UInt {
         didSet {
             self.updateStepByStepView()
         }
     }
-    var stepsSeparation: CGFloat
-    var stepsColor: UIColor
+    public var stepsSeparation: CGFloat
+    public var stepsColor: UIColor
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         
         self.currentStepIndex = 0
         self.numberOfSteps = 5
@@ -37,11 +37,11 @@ class StepByStep: UIView {
         super.init(frame: frame)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         
         self.updateStepByStepView()
     }

@@ -1,24 +1,86 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="StepByStepExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Steps:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cB5-de-Hlc">
+                                <rect key="frame" x="20" y="28" width="134.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="qcL-cY-y2G">
+                                <rect key="frame" x="20" y="57" width="94" height="29"/>
+                                <connections>
+                                    <action selector="stepperValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="qM6-0r-A99"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HX2-32-hse">
+                                <rect key="frame" x="162" y="28" width="10.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current step:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4JF-qp-Fys">
+                                <rect key="frame" x="20" y="94" width="100.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Yg1-co-8BJ">
+                                <rect key="frame" x="20" y="123" width="94" height="29"/>
+                                <connections>
+                                    <action selector="stepperValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="JDF-em-9qv"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXS-mY-7KO">
+                                <rect key="frame" x="128" y="94" width="10.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qcL-cY-y2G" firstAttribute="top" secondItem="cB5-de-Hlc" secondAttribute="bottom" constant="8" id="15A-eH-bRm"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="XXS-mY-7KO" secondAttribute="trailing" constant="10" id="42P-ZW-77u"/>
+                            <constraint firstItem="Yg1-co-8BJ" firstAttribute="top" secondItem="4JF-qp-Fys" secondAttribute="bottom" constant="8" id="AHG-J7-BnZ"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="cB5-de-Hlc" secondAttribute="leading" id="DMX-tg-hmu"/>
+                            <constraint firstItem="HX2-32-hse" firstAttribute="baseline" secondItem="cB5-de-Hlc" secondAttribute="baseline" id="GqC-jQ-u5Z"/>
+                            <constraint firstItem="4JF-qp-Fys" firstAttribute="top" secondItem="qcL-cY-y2G" secondAttribute="bottom" constant="8" id="Q1p-dO-0IT"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="4JF-qp-Fys" secondAttribute="leading" id="Rgi-fH-490"/>
+                            <constraint firstItem="qcL-cY-y2G" firstAttribute="leading" secondItem="cB5-de-Hlc" secondAttribute="leading" id="Rqm-Fg-xVD"/>
+                            <constraint firstItem="XXS-mY-7KO" firstAttribute="leading" secondItem="4JF-qp-Fys" secondAttribute="trailing" constant="7.5" id="TCZ-Co-Fi8"/>
+                            <constraint firstItem="cB5-de-Hlc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="XNJ-YR-L6q"/>
+                            <constraint firstItem="XXS-mY-7KO" firstAttribute="baseline" secondItem="4JF-qp-Fys" secondAttribute="baseline" id="eum-ES-is9"/>
+                            <constraint firstItem="Yg1-co-8BJ" firstAttribute="leading" secondItem="4JF-qp-Fys" secondAttribute="leading" id="n38-HG-OdL"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="HX2-32-hse" secondAttribute="trailing" constant="10" id="ohp-Hf-48k"/>
+                            <constraint firstItem="HX2-32-hse" firstAttribute="leading" secondItem="cB5-de-Hlc" secondAttribute="trailing" constant="7.5" id="wbp-yM-9V7"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="currentStepLabel" destination="XXS-mY-7KO" id="LdN-se-wkS"/>
+                        <outlet property="currentStepStepper" destination="Yg1-co-8BJ" id="JaD-ff-MLn"/>
+                        <outlet property="numberOfStepsLabel" destination="HX2-32-hse" id="ani-q5-bWd"/>
+                        <outlet property="numberOfStepsStepper" destination="qcL-cY-y2G" id="vNi-XY-cQs"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>

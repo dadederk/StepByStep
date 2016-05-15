@@ -1,0 +1,14 @@
+PODS:
+  - StepByStep (0.1.0)
+
+DEPENDENCIES:
+  - StepByStep (from `../`)
+
+EXTERNAL SOURCES:
+  StepByStep:
+    :path: ../
+
+SPEC CHECKSUMS:
+  StepByStep: 5c51ad189d5743bf6e334a3c110c379dcae1bbf9
+
+COCOAPODS: 0.38.2
