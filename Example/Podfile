@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'StepByStep_Example' do
+  pod 'StepByStep', :path => '../'
+
+  target 'StepByStep_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
