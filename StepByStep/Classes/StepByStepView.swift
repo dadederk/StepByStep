@@ -28,7 +28,6 @@ public class StepByStep: UIView {
     public var stepsColor: UIColor
     
     override public init(frame: CGRect) {
-        
         self.currentStepIndex = 0
         self.numberOfSteps = 5
         self.stepsSeparation = 5.0
@@ -42,52 +41,78 @@ public class StepByStep: UIView {
     }
     
     override public func layoutSubviews() {
-        
         self.updateStepByStepView()
     }
     
     func updateStepByStepView() {
-    
-        self.removeAllSteps()
-        
         if self.numberOfSteps > 0 {
+            self.removeUnnecessarySteps()
             self.updateSteps()
             self.updateCurrentStep()
+            self.addNecessarySteps()
         }
     }
     
-    func removeAllSteps() {
-    
-        for subview in self.subviews {
-            subview.removeFromSuperview()
+    func removeUnnecessarySteps() {
+        if Int(self.numberOfSteps) < self.subviews.count {
+            for index in Int(self.numberOfSteps)..<self.subviews.count {
+                self.subviews[Int(index)].removeFromSuperview()
+            }
         }
     }
     
     func updateSteps() {
-    
-        let separationsWidth = self.stepsSeparation * CGFloat(self.numberOfSteps - 1)
-        let stepsWidth = (self.frame.size.width - separationsWidth) / CGFloat(self.numberOfSteps);
-        
-        for index in 0..<self.numberOfSteps {
-            
-            let x = CGFloat(index) * (stepsWidth + self.stepsSeparation)
-            let stepViewFrame = CGRectMake(x, 0.0, stepsWidth, self.frame.height)
-            let stepView = UIView(frame: stepViewFrame)
-            
-            stepView.backgroundColor = self.stepsColor
-            self.addSubview(stepView)
+        for (index, subview) in self.subviews.enumerate() {
+            if index < Int(self.numberOfSteps) {
+                UIView.animateWithDuration(0.2, animations: {
+                    self.subviews[Int(index)].frame = self.stepFrameForIndex(index)
+                })
+            } else {
+                UIView.animateWithDuration(0.2, animations: {
+                    subview.alpha = 0.0
+                    }, completion: { (finished) in
+                        subview.removeFromSuperview()
+                })
+            }
         }
     }
     
     func updateCurrentStep() {
-        
         for (index, subview) in self.subviews.enumerate() {
-        
             if index < Int(self.currentStepIndex) {
-                subview.hidden = true
+                UIView.animateWithDuration(0.2, animations: {
+                    subview.alpha = 0.0
+                })
             } else {
-                subview.hidden = false
+                UIView.animateWithDuration(0.2, animations: {
+                    subview.alpha = 1.0
+                })
             }
         }
+    }
+    
+    func addNecessarySteps() {
+        if Int(self.numberOfSteps) > self.subviews.count {
+            for index in self.subviews.count..<Int(self.numberOfSteps) {
+                let view = UIView(frame: self.stepFrameForIndex(index))
+                view.backgroundColor = self.stepsColor
+                view.alpha = 0.0
+                
+                self.addSubview(view)
+                
+                UIView.animateWithDuration(0.2, animations: { 
+                    view.alpha = 1.0
+                })
+            }
+        }
+    }
+    
+    func stepFrameForIndex(index: Int) -> CGRect {
+        let separationsWidth = self.stepsSeparation * CGFloat(self.numberOfSteps - 1)
+        let stepsWidth = (self.frame.size.width - separationsWidth) / CGFloat(self.numberOfSteps);
+        let x = CGFloat(index) * (stepsWidth + self.stepsSeparation)
+        let stepViewFrame = CGRectMake(x, 0.0, stepsWidth, self.frame.height)
+        
+        return stepViewFrame
     }
 }
