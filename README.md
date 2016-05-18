@@ -1,6 +1,6 @@
 # StepByStep
 
-[![CI Status](http://img.shields.io/travis/Daniel Devesa Derksen-Staats/StepByStep.svg?style=flat)](https://travis-ci.org/Daniel Devesa Derksen-Staats/StepByStep)
+[![CI Status](http://img.shields.io/travis/Daniel Devesa Derksen-Staats/StepByStep.svg?style=flat)](https://travis-ci.org/dadederk/StepByStep.svg?branch=master)
 [![Version](https://img.shields.io/cocoapods/v/StepByStep.svg?style=flat)](http://cocoapods.org/pods/StepByStep)
 [![License](https://img.shields.io/cocoapods/l/StepByStep.svg?style=flat)](http://cocoapods.org/pods/StepByStep)
 [![Platform](https://img.shields.io/cocoapods/p/StepByStep.svg?style=flat)](http://cocoapods.org/pods/StepByStep)
