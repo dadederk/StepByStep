@@ -10,6 +10,7 @@
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
+- iOS 8.0+
 
 ## Installation
 
@@ -20,9 +21,31 @@ it, simply add the following line to your Podfile:
 pod "StepByStep"
 ```
 
+## Usage
+
+### Initialisation
+To add the stepped progress bar component, just initialise it with a frame and add it to your view:
+```
+self.stepByStepView = StepByStep(frame: stepByStepViewFrame)
+self.view.addSubview(self.stepByStepView)
+```
+
+### Customisation
+Some customisation that you can do at the moment includes the number of steps and in which step you currently are. The separation between steps and the colour they have.
+```
+self.stepByStepView.currentStepIndex = 0
+self.stepByStepView.numberOfSteps = 5
+self.stepByStepView.stepsSeparation = 5.0
+self.stepByStepView.stepsColor = UIColor.orangeColor()
+```
+
+![Animation](Screenshots/StepByStep.gif)
+
 ## Author
 
-Daniel Devesa Derksen-Staats, dadederk@gmail.com
+Daniel Devesa
+
+[![Twitter Follow](https://img.shields.io/twitter/follow/dadederk.svg?style=social)](https://twitter.com/dadederk)
 
 ## License
 
