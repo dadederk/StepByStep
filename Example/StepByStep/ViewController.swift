@@ -60,6 +60,10 @@ class ViewController: UIViewController {
         self.numberOfStepsLabel.text = "\(numberOfSteps)"
         self.stepByStepView.numberOfSteps = numberOfSteps
         
+        if numberOfSteps < UInt(self.currentStepStepper.value) {
+            updateCurrentStep(numberOfSteps)
+        }
+        
         self.currentStepStepper.maximumValue = Double(numberOfSteps)
     }
     
