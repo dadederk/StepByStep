@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "StepByStep"
-  s.version          = "0.1.0"
+  s.version          = "0.2.0"
   s.summary          = "Stepped progress bar UI component written in Swift for iOS."
 
 # This description is used to generate tags and improve search results.
@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   s.license          = 'MIT'
   s.author           = { "Daniel Devesa Derksen-Staats" => "dadederk@gmail.com" }
   s.source           = { :git => "https://github.com/dadederk/StepByStep.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/dadederk'
+  s.social_media_url = 'https://twitter.com/dadederk'
 
   s.ios.deployment_target = '8.0'
 
